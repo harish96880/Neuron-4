@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      section {
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .screen {
+        position: absolute;
+        left: 10%;
+        width: 50rem;
+        height: 30rem;
+        background-image: url(./assets/images/BG\ 02.png);
+      }
+      .bar {
+        display: flex;
+        flex-direction: row;
+      }
+      .status-bar {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        margin: 8px 0px 8px 8px;
+        width: 43.5rem;
+        height: 3rem;
+        background-image: linear-gradient(0deg, #2b2b2b, #484848);
+        border-radius: 8px;
+      }
+      .time-bar {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        width: 80px;
+        height: 48px;
+        margin: 8px;
+        background-image: linear-gradient(0deg, #2b2b2b, #484848);
+        border-radius: 8px;
+      }
+      .status-text {
+        display: inline-flex;
+        font-family: Montserrat, Medium;
+        font-size: 10px;
+        color: #a5a5a5;
+      }
+      .status-value {
+        display: inline-flex;
+        font-family: Montserrat;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+      }
+      .greenToggle {
+        width: 28px;
+        height: 12px;
+        border-radius: 25px;
+        background-color: #32d500;
+        border: none;
+        box-shadow: 0px 0px 0px 1.5px #00000099;
+        filter: blur(0.3px);
+      }
+      .value-card {
+        position: relative;
+        width: 240px;
+        height: 176px;
+        background-color: #2b2b2b;
+        margin: 0px 8px 8px 8px;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <div class="screen">
+        <div class="bar">
+          <div class="status-bar">
+            <div class="img">
+              <img
+                src="./Group 930.png"
+                width="24px"
+                height="24px"
+                style="margin: 12px 8px 12px 16px"
+              />
+            </div>
+            <div class="txt">
+              <span
+                class="status-text"
+                style="width: 32px; height: 25px; margin: 11px 8px 12px 8px"
+                >RUN HOUR</span
+              >
+            </div>
+            <div class="txt">
+              <span
+                class="status-value"
+                style="width: 53px; height: 19px; margin: 14px 0px 15px 0px"
+                >88888</span
+              >
+            </div>
+            <div class="txt">
+              <p
+                class="status-text"
+                style="width: 7px; height: 13px; margin: 19px 3px 16px 0px"
+              >
+                h
+              </p>
+            </div>
+            <div style="margin: 10.5px 0px 9.5px 25px">
+              <span style="font-size: 23px">|</span>
+            </div>
+            <div class="txt">
+              <span
+                class="status-text"
+                style="width: 32px; height: 25px; margin: 11px 10px 12px 16px"
+                >AUTO RESTART</span
+              >
+            </div>
+            <div class="txt">
+              <span
+                class="status-value"
+                style="width: 26px; height: 19px; margin: 15px 34px 14px 10px"
+                >ON</span
+              >
+            </div>
+            <div class="txt">
+              <button
+                class="greenToggle"
+                style="margin: 18px 24px 18px 0px"
+              ></button>
+            </div>
+            <div style="margin: 10.5px 18px 9.5px 0px">
+              <span style="font-size: 23px">|</span>
+            </div>
+            <div class="txt">
+              <span
+                class="status-text"
+                style="width: 38px; height: 13px; margin: 18px 10px 17px 0px"
+                >STATUS</span
+              >
+            </div>
+            <div class="txt">
+              <span class="status-value" style="margin: 15px 32px 15px 0px"
+                >STANDBY</span
+              >
+            </div>
+            <div style="margin: 10.5px 16px 9.5px 0px">
+              <span style="font-size: 23px">|</span>
+            </div>
+            <div class="txt">
+              <span
+                class="status-text"
+                style="width: 33px; height: 13px; margin: 18px 7px 17px 0px"
+                >MODE</span
+              >
+            </div>
+            <div class="txt">
+              <span
+                class="status-value"
+                style="width: 62px; height: 18px; margin: 15px 50px 15px 0px"
+                >REMOTE</span
+              >
+            </div>
+          </div>
+          <div class="time-bar">
+            <div class="txt">
+              <span
+                class="status-text"
+                style="width: 44px; height: 25px; margin: 12px 18px 11px 18px"
+                >JAN 13 09:00PM</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="img">
+            <button
+              class="greenToggle"
+              style="position: absolute; margin: 14px 14px 150px 198px"
+            ></button>
+            <img
+              src="./DI PR I.png"
+              width="29.33px"
+              height="29.33px"
+              style="margin: 33.33px 0px 0px 57.33px"
+            />
+
+            <span
+              style="
+                float: right;
+                margin: 28px 58.5px 0px 7.83px;
+                font-size: 14px;
+                width: 87px;
+                height: 36px;
+              "
+              class="status-text"
+              >DISCHARGE PRESSURE</span
+            >
+          </div>
+          <div class="txt">
+            <span
+              style="
+                width: 91px;
+                height: 50px;
+                margin: 0 0px 0 101px;
+                font-size: 41px;
+                color: white;
+                font-family: Montserrat;
+                font-weight: bold;
+              "
+              >0</span
+            >
+          </div>
+          <div class="txt">
+            <span
+              style="
+                width: 23px;
+                height: 18px;
+                font-size: 14px;
+                color: white;
+                font-family: Montserrat;
+                margin: 0 112px 37px 105px;
+              "
+              >bar</span
+            >
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="img">
+            <button
+              class="greenToggle"
+              style="position: absolute; margin: 14px 14px 150px 198px"
+            ></button>
+            <img
+              src="./assets/images/DI TE I.png"
+              width="29.33px"
+              height="29.33px"
+              style="margin: 33.33px 0px 0px 57.33px"
+            />
+
+            <span
+              style="
+                float: right;
+                margin: 28px 58.5px 0px 7.83px;
+                font-size: 14px;
+                width: 87px;
+                height: 36px;
+              "
+              class="status-text"
+              >DISCHARGE TEMPERATURE</span
+            >
+          </div>
+          <div class="txt">
+            <span
+              style="
+                width: 91px;
+                height: 50px;
+                margin: 0 0 0 101px;
+                font-size: 41px;
+                color: white;
+                font-family: Montserrat;
+                font-weight: bold;
+              "
+              >34</span
+            >
+          </div>
+          <div class="txt">
+            <span
+              style="
+                width: 40px;
+                height: 58px;
+                font-size: 14px;
+                color: white;
+                font-family: Montserrat;
+                margin: 0 0 0 105px;
+              "
+              >deg C</span
+            >
+          </div>
+        </div>
+        <div class="menu">
+          <button
+            style="
+              width: 120px;
+              height: 40px;
+              background-color: #be0000;
+              font-size: 14px;
+              color: white;
+              font-family: Montserrat;
+              font-weight: bold;
+              margin: 0 0 0 8px;
+              border-radius: 8px;
+            "
+          >
+            MENU
+          </button>
+          <div class="btn-group" style="border-radius: 8px">
+            <button
+              style="
+                width: 132px;
+                height: 40px;
+                border: 0.3px solid #292727;
+                background-image: linear-gradient(0deg, #a1a1a1, #fafafa);
+                font-size: 10px;
+                color: #2b2b2b;
+                font-family: Montserrat;
+                font-weight: bold;
+                padding: 0px 0px 0 0px;
+              "
+            >
+              <img
+                src="./Path 1125.png"
+                width="16.02px"
+                height="17px"
+                style="margin: 7px 10px 0px 0px"
+              /><span
+                style="display: inline-flex; width: 45px; margin: 0px 20px 0 0"
+                >MIMIC DISPLAY</span
+              >
+            </button>
+            <button
+              style="
+                width: 132px;
+                height: 40px;
+                background-image: linear-gradient(0deg, #484848, #a5a5a5);
+                font-size: 10px;
+                color: white;
+                font-family: Montserrat;
+                font-weight: bold;
+                margin: 0 0 0 0px;
+              "
+            >
+              <img
+                src="./Group 808.png"
+                width="19.98px"
+                height="19px"
+                style="margin: 7px 10px 0px 0px"
+              />
+              <span
+                style="display: inline-flex; width: 45px; margin: 0px 20px 0 0"
+                >FAVOURITES MENU</span
+              >
+            </button>
+            <button
+              style="
+                width: 132px;
+                height: 40px;
+                background-image: linear-gradient(0deg, #484848, #a5a5a5);
+                font-size: 10px;
+                color: white;
+                font-family: Montserrat;
+                font-weight: bold;
+                margin: 0 0 0 0px;
+              "
+            >
+              <img
+                src="./Group 809.png"
+                width="22px"
+                height="22px"
+                style="margin: 7px 10px 0px 0px"
+              />
+              <span
+                style="display: inline-flex; width: 45px; margin: 0px 20px 0 0"
+                >OPERATION STATUS</span
+              >
+            </button>
+            <button
+              style="
+                width: 132px;
+                height: 40px;
+                background-image: linear-gradient(0deg, #484848, #a5a5a5);
+                font-size: 10px;
+                color: white;
+                font-family: Montserrat;
+                font-weight: bold;
+              "
+            >
+              <img
+                src="./Group 810.png"
+                width="20px"
+                height="21px"
+                style="margin: 7px 10px 0px 0px"
+              />
+              <span
+                style="display: inline-flex; width: 45px; margin: 0px 20px 0 0"
+                >SERVICE STATUS</span
+              >
+            </button>
+            <button
+              style="
+                width: 132px;
+                height: 40px;
+                background-image: linear-gradient(0deg, #484848, #a5a5a5);
+                font-size: 10px;
+                color: white;
+                font-family: Montserrat;
+                font-weight: bold;
+                margin: 0 0 0 0px;
+              "
+            >
+              <img
+                src="./Group 811.png"
+                width="19px"
+                height="20px"
+                style="margin: 7px 10px 0px 0px"
+              />
+              <span
+                style="display: inline-flex; width: 45px; margin: 0px 20px 0 0"
+                >ALERTS HISTORY</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
